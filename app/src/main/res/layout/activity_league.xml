@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content" android:id="@+id/togbtnMens" android:textOff="@string/mens"
                 android:textOn="@string/mens" android:textAllCaps="false" android:textColor="@android:color/white"
                 android:background="@drawable/swoosh_toggle" android:fontFamily="@font/montserrat"
-                android:textSize="18sp" android:textStyle="bold"/>
+                android:textSize="18sp" android:textStyle="bold" android:onClick="onMensClicked"/>
         <ToggleButton
                 android:text="@string/womens"
                 android:layout_width="match_parent"
@@ -69,14 +69,14 @@
                 android:textColor="@android:color/white" android:background="@drawable/swoosh_toggle"
                 android:layout_marginTop="16dp" android:layout_marginBottom="16dp"
                 android:fontFamily="@font/montserrat" android:textOff="@string/womens" android:textOn="@string/womens"
-                android:textSize="18sp" android:textStyle="bold"/>
+                android:textSize="18sp" android:textStyle="bold" android:onClick="onWomensClicked"/>
         <ToggleButton
                 android:text="@string/co_ed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/togbtnCoed" android:textAllCaps="false"
                 android:textColor="@android:color/white" android:background="@drawable/swoosh_toggle"
                 android:fontFamily="@font/montserrat" android:textOff="@string/co_ed" android:textOn="@string/co_ed"
-                android:textSize="18sp" android:textStyle="bold"/>
+                android:textSize="18sp" android:textStyle="bold" android:onClick="onCoedClicked"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
