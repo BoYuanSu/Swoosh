@@ -43,4 +43,13 @@ open class BaseActivity : AppCompatActivity() {
         super.onRestart()
     }
 
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        Log.d(TAG, "${javaClass.simpleName} onRestoreInstanceState")
+        super.onRestoreInstanceState(savedInstanceState)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        Log.d(TAG, "${javaClass.simpleName} onSaveInstanceState")
+        super.onSaveInstanceState(outState)
+    }
 }
