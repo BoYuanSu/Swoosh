@@ -2,16 +2,18 @@ package com.takosu.swoosh.Controller
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.takosu.swoosh.Utilities.EXTRA_LEAGUE
+import com.takosu.swoosh.Model.Player
 import com.takosu.swoosh.R
+import com.takosu.swoosh.Utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
 
-    var selectedLeague: String = ""
+//    var selectedLeague: String = ""
+
+    val player = Player("","")
 
     private val TAG = javaClass.simpleName
 
@@ -25,7 +27,7 @@ class LeagueActivity : BaseActivity() {
             togbtnMens.isChecked = true
             return
         }
-        selectedLeague = "Mens"
+        player.league = "mens"
         togbtnWomens.isChecked = false
         togbtnCoed.isChecked = false
     }
@@ -35,7 +37,7 @@ class LeagueActivity : BaseActivity() {
             togbtnWomens.isChecked = true
             return
         }
-        selectedLeague = "Womens"
+        player.league = "womens"
         togbtnCoed.isChecked = false
         togbtnMens.isChecked = false
 
@@ -46,16 +48,16 @@ class LeagueActivity : BaseActivity() {
             togbtnCoed.isChecked = true
             return
         }
-        selectedLeague = "Co-ed"
+        player.league = "co-ed"
         togbtnMens.isChecked = false
         togbtnWomens.isChecked = false
 
     }
 
     fun leagueNextClicked(view: View) {
-        if (selectedLeague != "") {
+        if (player.league != "") {
             val skillActivity = Intent(this, SkillActivity::class.java)
-            skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
+            skillActivity.putExtra(EXTRA_PLAYER, player)
             startActivity(skillActivity)
         } else {
             Toast.makeText(this, "Please select a league", Toast.LENGTH_SHORT).show()
